@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @idea.name %>
+</p>
+
+<p>
+  <strong>Education:</strong>
+  <%= @idea.education %>
+</p>
+<p>
+  <strong>Insurance:</strong>
+  <%= @idea.insurance %>
+</p>
+<p>
+  <strong>Experience:</strong>
+  <%= @idea.experience %>
+</p>
+<p>
+  <strong>Therapy Types:</strong>
+  <%= @idea.therapy types %>
+</p>
+<p>
+  <strong>Our team picture:</strong>
+<%= image_tag(@idea.picture_url, width: 600) if @idea.picture.present? %>
+</p>
+
+<%= link_to 'Edit', edit_idea_path(@idea) %> |
+<%= link_to 'Back', ideas_path %>

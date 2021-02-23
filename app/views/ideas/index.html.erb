@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Therapists</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Education</th>
+      <th>Insurance</th>
+      <th>Experience</th>
+      <th>Therapy Types</th>
+      <th>Photo</th>
+      <th colspan="6"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @ideas.each do |idea| %>
+      <tr>
+        <td><%= idea.name %></td>
+        <td><%= idea.education %></td>
+        <td><%= idea.insurance %></td>
+        <td><%= idea.experience %></td>
+        <td><%= idea.therapy Types %></td>
+        <td><%= image_tag idea.picture_url, width: '100%' if idea.picture.present? %></td>
+        <td><%= link_to 'Show me details', idea %></td>
+        <-!---- <td><%= link_to 'Edit', edit_idea_path(idea) %></td> ----->
+        <td><%= link_to 'I am not interested', idea, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'Therapist Sign-up', new_idea_path %>
